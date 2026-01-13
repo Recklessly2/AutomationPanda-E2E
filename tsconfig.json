@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@utils/*": ["utils/*"]
+    },
+    "types": ["node", "playwright"]
+  },
+  "include": [
+    "tests",
+    "utils",
+    "playwright.config.ts"
+  ]
+}
