@@ -1,7 +1,11 @@
 import { test, expect } from '@playwright/test';
+import { createUser } from '@utils/apiClient';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://automationpanda.com/');
-  await expect(page).toHaveTitle("Automation Panda | A blog for software development and testing");
+
+
+test('user appears in UI', async ({ page }) => {
+  const user = await createUser();
+  await page.goto('/users');
+  await page.locator(`text=${user.name}`).isVisible();
   await page.pause();
 });
